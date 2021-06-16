@@ -1,18 +1,14 @@
 import React from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
-import React, { useState } from "react";
-import React, { useState } from "react";
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-  TouchableOpacity,
-  Button,
-} from "react-native";
 
-import { Header, Colors } from "react-native/Libraries/NewAppScreen";
 
-import QRCodeScanner from "react-native-qrcode-scanner";
+<script src="https://unpkg.com/html5-qrcode@2.0.9/dist/html5-qrcode.min.js"></script>
+<div id="qr-reader" style="width: 600px"></div>
+
+function onScanSuccess(decodedText, decodedResult) {
+     console.log(`Code scanned = ${decodedText}`, decodedResult);
+}
+var html5QrcodeScanner = new Html5QrcodeScanner(
+  "qr-reader", { fps: 10, qrbox: 250 });
+html5QrcodeScanner.render(onScanSuccess);
+
